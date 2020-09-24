@@ -27,7 +27,7 @@ npm install --save hexo-filter-kroki
 
 ## Minimum configuration
 
-By default no configuration is required, it will send your text to `kroki.io` for rendering, and the base64-encoded images will be inlined in the html.
+By default, no configuration is required, the plugin will send your text to `kroki.io` for rendering, and the base64-encoded images will be inlined in the html.
 
 ## Advanced configuration
 
@@ -83,14 +83,14 @@ and will get
       { name: "Acknowledge", wave: "1.....|01." }
     ]}
     ```
-<img alt="kroki" src="https://kroki.io/actdiag/svg/eNpVTjkOwkAM7POK0fa8AEFDQUGNKBCFCdbKItmVjCFIKH9nj4Sj81yeodYuQh6vBhhUjLFYo43hwWr5lJ48N0nsKDDuN9ZizfjMHVZw-8S5QtX88aMcEpbgYfw0d1oWT_n349myIQ9Q6qtWjePcuNN4lalynvVNbyYmN8Di_4fxDQA-Q4A=">
 
 and will get
 
 <img alt="kroki" src="https://kroki.io/wavedrom/svg/eNqrVijOTM9LzLFSiOZSUKhWyEvMTbVSUErOyVbSUYCB8sQykGCBHgjUALGSQq0OsnKXxJJEhHqo8go9YxPTihpbvQqgVApQBdAOpYzUxBQgVykpP6USRJckZuaAaJC8UiyasUGphaWpxSVQk6HGGugZ6ukZ1BjqGcBcgarJMTk7L788JzUlPRWoEarJEOJ0A0OQ07liawGPW0Gr">
 
 
-see more diagrams from 
+#### More
+See more diagrams at 
 
 * https://docs.kroki.io/kroki/diagrams-types/
 * https://kroki.io/examples.html
