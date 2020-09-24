@@ -10,14 +10,14 @@
 
 ## How Does it work
 
-* Find diagram types quote with \`\`\`\<type\> , eg 
+Find diagram types quote with \`\`\`\<type\> , eg 
     
     ```plantuml
     your diagram
     ```
 
-* Send the diagram content to kroki.io
-* Return the generated images.
+Send the diagram content to kroki.io
+Return the generated images.
 
 ## Install
 
@@ -51,18 +51,28 @@ kroki:
 
 ## How to use it?
 
-Eg for plantuml
+#### eg for actdiag
 
-    ​```puml
-    @startuml
-    Object <|-- ArrayList
-    Object : equals()
-    ArrayList : Object[] elementData
-    ArrayList : size()
-    @enduml
+    ​```actdiag
+    actdiag {
+      write -> convert -> image
+    
+      lane user {
+        label = "User"
+        write [label = "Writing text"];
+        image [label = "Get diagram image"];
+      }
+      lane Kroki {
+        convert [label = "Convert text to image"];
+      }
+    }
     ```
 
-And eg for wavedrom
+and will get
+
+<img alt="kroki" src="https://kroki.io/actdiag/svg/eNpVTjkOwkAM7POK0fa8AEFDQUGNKBCFCdbKItmVjCFIKH9nj4Sj81yeodYuQh6vBhhUjLFYo43hwWr5lJ48N0nsKDDuN9ZizfjMHVZw-8S5QtX88aMcEpbgYfw0d1oWT_n349myIQ9Q6qtWjePcuNN4lalynvVNbyYmN8Di_4fxDQA-Q4A=">
+
+#### eg for wavedrom
 
     ```wavedrom
     { signal: [
@@ -73,6 +83,7 @@ And eg for wavedrom
       { name: "Acknowledge", wave: "1.....|01." }
     ]}
     ```
+<img alt="kroki" src="https://kroki.io/actdiag/svg/eNpVTjkOwkAM7POK0fa8AEFDQUGNKBCFCdbKItmVjCFIKH9nj4Sj81yeodYuQh6vBhhUjLFYo43hwWr5lJ48N0nsKDDuN9ZizfjMHVZw-8S5QtX88aMcEpbgYfw0d1oWT_n349myIQ9Q6qtWjePcuNN4lalynvVNbyYmN8Di_4fxDQA-Q4A=">
 
 and will get
 
