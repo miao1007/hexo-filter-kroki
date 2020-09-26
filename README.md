@@ -3,21 +3,23 @@
 [![download](https://img.shields.io/npm/dm/hexo-filter-kroki.svg)](https://www.npmjs.com/package/hexo-filter-kroki)
 
 
+Using [Kroki.io](https://kroki.io/#how) to generate diagrams for hexo
+
 ## Features
 
 * Generate raw/base64/urlencoded svg at compile time, no external css and js required.
-* Support free kroki.io service and self-managed service.
+* Support [free](https://kroki.io/#install) kroki.io and [self-managed](https://docs.kroki.io/kroki/setup/install/) service.
 
 ## How Does it work
 
-Find diagram types quote with \`\`\`\<type\> , eg 
+First find diagram types quote with \`\`\`\<type\>  eg 
     
     ```plantuml
     your diagram
     ```
 
-Send the diagram content to kroki.io
-Return the generated images.
+The plugin will parse the tag and send the diagram content to kroki.io.
+Finally the generated images will be returned.
 
 ## Install
 
@@ -38,6 +40,7 @@ kroki:
 
   # the kroki free service server, you may switch to your self-hosted sever.
   server: "https://kroki.io/"
+  # Available values 
   # "inline": <svg>xxx<svg/>
   # "inlineUrlEncode": <img src='data:image/svg+xml;> 
   # "inlineBase64": <img src='data:image/svg+xml;base64> 
@@ -52,6 +55,8 @@ kroki:
 ## How to use it?
 
 #### eg for actdiag
+
+Input the following text
 
     ​```actdiag
     actdiag {
@@ -74,6 +79,8 @@ and will get
 
 #### eg for wavedrom
 
+Input the following text
+
     ```wavedrom
     { signal: [
       { name: "clk",         wave: "p.....|..." },
@@ -90,7 +97,30 @@ and will get
 
 
 #### More
-See more diagrams at 
+
+Supported types
+
+* blockdiag
+* bpmn
+* bytefield
+* seqdiag
+* actdiag
+* nwdiag
+* packetdiag
+* rackdiag
+* c4plantuml
+* ditaa
+* erd
+* graphviz
+* mermaid
+* nomnoml
+* plantuml
+* svgbob
+* vega
+* vegalite
+* wavedrom
+
+See more diagram exampless at 
 
 * https://docs.kroki.io/kroki/diagrams-types/
 * https://kroki.io/examples.html
