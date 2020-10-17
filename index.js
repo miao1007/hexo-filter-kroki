@@ -2,7 +2,7 @@ const krokiRender = require("./lib/krokiRender");
 
 
 // add more puml diagTypes here
-const replacement = /(\s*)(```) *(blockdiag|bpmn|seqdiag|actdiag|nwdiag|packetdiag|rackdiag|c4plantuml|ditaa|erd|graphviz|mermaid|nomnoml|puml|plantuml|svgbob|vega|vegalite|wavedrom) *\n?([\s\S]+?)\s*(\2)(\n+|$)/g;
+const replacement = /(\s*)(```) *(blockdiag|bpmn|seqdiag|actdiag|nwdiag|packetdiag|rackdiag|c4plantuml|ditaa|erd|graphviz|mermaid|nomnoml|puml|plantuml|svgbob|vegalite|vega|wavedrom) *\n?([\s\S]+?)\s*(\2)(\n+|$)/g;
 
 const diagTypes = [
     "blockdiag",
@@ -21,8 +21,8 @@ const diagTypes = [
     "nomnoml",
     "plantuml",
     "svgbob",
-    "vega",
     "vegalite",
+    "vega",
     "wavedrom"
 ]
 
