@@ -1,6 +1,6 @@
 {
     "name": "hexo-filter-kroki",
-    "version": "2.1.2",
+    "version": "2.1.3",
     "description": "Using Kroki to generate diagram for hexo",
     "main": "index.js",
     "scripts": {
