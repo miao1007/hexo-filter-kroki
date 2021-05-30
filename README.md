@@ -51,7 +51,7 @@ kroki:
   # common options: svg/png
   outputFormat: "svg"
   # the img generated will have a default class name.
-  className: 'kroki',
+  className: 'kroki'
 
   # append some text per diagram, used for the theme or else config
   insert: 
@@ -131,5 +131,5 @@ Supported types
 
 See more diagram exampless at 
 
-* https://docs.kroki.io/kroki/diagrams-types/
+* https://docs.kroki.io/kroki/diagram-types/
 * https://kroki.io/examples.html

@@ -1,9 +1,5 @@
 const render = require("./lib/render");
-
-
-// add more puml diagTypes here
-const replacement = /(\s*)(```) *(blockdiag|bpmn|seqdiag|actdiag|nwdiag|packetdiag|rackdiag|c4plantuml|ditaa|erd|graphviz|mermaid|nomnoml|puml|plantuml|svgbob|vegalite|vega|wavedrom) *\n?([\s\S]+?)\s*(\2)(\n+|$)/g;
-
+const matchRegexp = /(\s*)(```) *(blockdiag|bpmn|seqdiag|actdiag|nwdiag|packetdiag|rackdiag|c4plantuml|ditaa|erd|graphviz|mermaid|nomnoml|puml|plantuml|svgbob|vegalite|vega|wavedrom) *\n?([\s\S]+?)\s*(\2)(\n+|$)/g;
 const diagTypes = [
     "blockdiag",
     "bpmn",
@@ -26,26 +22,42 @@ const diagTypes = [
     "wavedrom"
 ]
 
-var i = 0;
-for (let diagType of diagTypes) {
-    hexo.extend.tag.register(diagType, (args, content) => {
-        return render.serverSideRendering(Object.assign(render.config, hexo.config.kroki), diagType, content)
-    }, {
-        async: true,
-        ends: true
-    });
-
-    hexo.extend.filter.register('before_post_render', (data) => {
-        if ('.md'.indexOf(data.source.substring(data.source.lastIndexOf('.')).toLowerCase()) > -1) {
-            data.content = data.content
-                .replace(replacement, (raw, start, startQuote, lang, content, endQuote, end) => {
-                    if (lang === 'puml') {
-                        lang = 'plantuml'
-                    }
-                    // replace with an async call
-                    return start + '{% ' + lang + ' %}' + content + '{% end' + lang + ' %}' + end;
-                });
-        }
-    }, i);
-    i++;
+/**
+ * make url for a diagram
+ *
+ * see https://docs.kroki.io/kroki/setup/encode-diagram/
+ * @param {string}server server's url
+ * @param {string}diagramType eg: vegalite, plantuml
+ * @param {('svg'|'png')}format - url format
+ * @param {string}diagram your diagram fragment to make the URL
+ * @return {string} encoded URL
+ */
+function makeURL(server, diagramType, format, diagram) {
+    const pako = require('pako')
+    const data = Buffer.from(diagram, 'utf8')
+    const compressed = pako.deflate(data, {level: 9})
+    const raw = Buffer.from(compressed)
+        .toString('base64')
+        .replace(/\+/g, '-').replace(/\//g, '_')
+    return [server, diagramType, format, raw].join('/')
 }
+
+/**
+ * modify content if needed
+ * @param {Object}pluginConfig: the plugin's config from _config.yml
+ * @param {string}diagram
+ * @returns {string}
+ */
+function decorateDiagram(pluginConfig, diagram) {
+    var insert = pluginConfig.insert
+    if (insert.content) {
+        diagram = render.appendAfterLine(diagram, insert.afterLine, insert.content)
+    }
+    return diagram;
+}
+
+render.register('kroki', {
+    server: "https://kroki.io",
+    // the img generated will have a default class name.
+    className: 'kroki'
+}, hexo, matchRegexp, diagTypes, makeURL, decorateDiagram)
