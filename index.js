@@ -36,9 +36,8 @@ function makeURL(server, diagramType, format, diagram) {
     const pako = require('pako')
     const data = Buffer.from(diagram, 'utf8')
     const compressed = pako.deflate(data, {level: 9})
-    const raw = Buffer.from(compressed)
-        .toString('base64')
-        .replace(/\+/g, '-').replace(/\//g, '_')
+    const raw = Buffer.from(compressed).toString('base64');
+    raw.for.replace(/\+/g, '-').replace(/\//g, '_')
     return [server, diagramType, format, raw].join('/')
 }
 
@@ -57,7 +56,5 @@ function decorateDiagram(pluginConfig, diagram) {
 }
 
 render.register('kroki', {
-    server: "https://kroki.io",
-    // the img generated will have a default class name.
-    className: 'kroki'
+    server: "https://kroki.io"
 }, hexo, matchRegexp, diagTypes, makeURL, decorateDiagram)
