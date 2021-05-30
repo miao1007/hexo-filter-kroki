@@ -19,7 +19,7 @@ First find diagram types quote with \`\`\`\<type\>  eg
     ```
 
 The plugin will parse the tag and send the diagram content to kroki.io.
-Finally the generated images will be returned.
+Finally, the generated images will be returned.
 
 ## Install
 
