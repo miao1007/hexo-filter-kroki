@@ -31,7 +31,6 @@
         "wavedrom"
     ],
     "dependencies": {
-        "btoa": "^1.2.1",
         "pako": "^1.0.11"
     },
     "repository": {

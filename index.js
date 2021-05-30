@@ -1,4 +1,4 @@
-const krokiRender = require("./lib/krokiRender");
+const render = require("./lib/render");
 
 
 // add more puml diagTypes here
@@ -29,7 +29,7 @@ const diagTypes = [
 var i = 0;
 for (let diagType of diagTypes) {
     hexo.extend.tag.register(diagType, (args, content) => {
-        return krokiRender.serverSideRendering(Object.assign(krokiRender.config, hexo.config.kroki), diagType, content)
+        return render.serverSideRendering(Object.assign(render.config, hexo.config.kroki), diagType, content)
     }, {
         async: true,
         ends: true
