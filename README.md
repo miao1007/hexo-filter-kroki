@@ -50,7 +50,7 @@ kroki:
 
   # common options: svg/png
   outputFormat: "svg"
-  # the img generated will have a default class name.
+  # the generated img will have a default class name.
   className: 'kroki'
 
   # append some fragment per diagram, used for the theme or else config
