@@ -53,12 +53,16 @@ kroki:
   # the img generated will have a default class name.
   className: 'kroki'
 
-  # append some text per diagram, used for the theme or else config
-  insert: 
-    # the line number, eg for puml: 1
-    afterLine: 0,
-    # the content to insert, eg for puml: !theme sketchy-outline
-    content: ''
+  # append some fragment per diagram, used for the theme or else config
+  inserts:
+    - diagram: plantuml
+      after: 1
+      # see https://plantuml.com/en/theme
+      fragment: '!theme sketchy-outline'
+    - diagram: mermaid
+      after: 0
+      # see https://mermaid-js.github.io/mermaid/#/theming
+      fragment: "%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%"
 ```
 
 ## How to use it?
