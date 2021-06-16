@@ -1,6 +1,6 @@
 {
     "name": "hexo-filter-kroki",
-    "version": "2.1.5",
+    "version": "2.1.6",
     "description": "Using Kroki to generate diagram for hexo",
     "main": "index.js",
     "scripts": {
@@ -21,13 +21,15 @@
         "c4plantuml",
         "ditaa",
         "erd",
+        "excalidraw",
         "graphviz",
         "mermaid",
         "nomnoml",
+        "pikchr",
         "plantuml",
         "svgbob",
-        "vega",
         "vegalite",
+        "vega",
         "wavedrom"
     ],
     "dependencies": {
