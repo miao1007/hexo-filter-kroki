@@ -111,29 +111,10 @@ and will get
 
 #### More
 
-Supported types
+See supported types from api
 
-* blockdiag
-* bpmn
-* bytefield
-* seqdiag
-* actdiag
-* nwdiag
-* packetdiag
-* rackdiag
-* c4plantuml
-* ditaa
-* erd
-* graphviz
-* mermaid
-* nomnoml
-* plantuml
-* svgbob
-* vega
-* vegalite
-* wavedrom
+* https://kroki.io/health
 
-See more diagram exampless at 
-
-* https://docs.kroki.io/kroki/diagram-types/
+See more diagram examples at 
+* 
 * https://kroki.io/examples.html
