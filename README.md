@@ -45,7 +45,7 @@ kroki:
   # "inlineUrlEncode": <img src='data:image/svg+xml;> 
   # "inlineBase64": <img src='data:image/svg+xml;base64> 
   # "localLink": <img src="/assert/puml/xxxx.svg">
-  # "externalLink": <img src="http://www.plantuml.com/plantuml/svg/xxx">
+  # "externalLink": <img src="https://kroki.io/plantuml/svg/xxx">
   link: "inline"
 
   # common options: svg/png
