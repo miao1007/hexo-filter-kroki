@@ -7,7 +7,7 @@ Using [Kroki.io](https://kroki.io/#how) to generate diagrams for hexo
 
 ## Features
 
-* Generate raw/base64/urlencoded svg at compile time, no external css and js required.
+* Generate raw/base64/urlencoded svg at compile time, themes are also supported, no external css and js required.
 * Support [free](https://kroki.io/#install) kroki.io and [self-managed](https://docs.kroki.io/kroki/setup/install/) service.
 
 ## How Does it work
@@ -115,6 +115,6 @@ See supported types from api
 
 * https://kroki.io/health
 
-See more diagram examples at 
-* 
+See more diagram examples at
+
 * https://kroki.io/examples.html
